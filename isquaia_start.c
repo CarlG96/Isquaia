@@ -1,28 +1,37 @@
 #include <stdio.h>
+#include <string.h>
 
-int main(){
+typedef enum {
+    Male, Female
+} Gender;
+
+typedef struct 
+{
+    char name[25];
+    int level;
+    Gender gender;
+} Character;
+
+Character constructCharacter(char *name, int level, Gender gender)
+{
+    Character character;
+    character.level = level;
+    character.gender = gender;
+    strcpy(character.name, name);
+    return character;
+}
+
+typedef enum 
+{
+    Isquaian, Flameborn, Tideborn, Cloudborn, Rockborn, Ironborn, Crystalborn, Forestborn, Swampborn, Frostborn, Songborn, Stormborn, Smogborn, Dustborn, Steamborn, Lightborn, Shadowborn
+} Race;
+
+int main()
+{
     printf("Welcome to Isquaia!\n");
-    char name[100];
-    printf("Choose your name:\n");
-    scanf_s("%s", &name);
-    printf("%s\n", name);
-    printf("Choose a race from the following options:\n");
-    printf("1) Isquaian\n");
-    printf("2) Flameborn\n");
-    printf("3) Tideborn\n");
-    printf("4) Cloudborn\n");
-    printf("5) Rockborn\n");
-    printf("6) Ironborn\n");
-    printf("7) Crystalborn\n");
-    printf("8) Forestborn\n");
-    printf("9) Swampborn\n");
-    printf("10) Frostborn\n");
-    printf("11) Songborn\n");
-    printf("12) Stormborn\n");
-    printf("13) Smogborn\n");
-    printf("14) Dustborn\n");
-    printf("15) Steamborn\n");
-    printf("16) Lightborn\n");
-    printf("17) Shadowborn\n");
-    return 0;
+    chooseName();
+    chooseGender();
+    chooseRace();
+    Character character = constructCharacter(name, 12, gender);
+    displayCharacter(character);
 }
