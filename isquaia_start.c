@@ -34,4 +34,5 @@ int main()
     chooseRace();
     Character character = constructCharacter(name, 12, gender);
     displayCharacter(character);
+    startMapMovement(character);
 }
