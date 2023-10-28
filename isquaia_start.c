@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+#include <stdbool.h>
 #include "isquaia_character.h"
 
 
@@ -74,32 +75,48 @@ void displayCharacter(Character *character){
 
 int main()
 {
-    printf("Welcome to Isquaia!\n");
-    Character Beltzer;
-    Beltzer.level = 1;
-    strcpy(Beltzer.name, "Beltzer");
-    Beltzer.race = Flameborn;
-    Beltzer.gender = Male;
-    displayCharacter(&Beltzer);
-    Character Ma;
-    Ma.level = 1;
-    strcpy(Ma.name, "Ma");
-    Ma.race = Tideborn;
-    Ma.gender = Female;
-    displayCharacter(&Ma);
-    Character Hom;
-    Hom.level = 20;
-    strcpy(Hom.name, "Hom");
-    Hom.race = Isquaian;
-    Hom.gender = Male;
-    displayCharacter(&Hom);
+    // printf("Welcome to Isquaia!\n");
+    // Character Beltzer;
+    // Beltzer.level = 1;
+    // strcpy(Beltzer.name, "Beltzer");
+    // Beltzer.race = Flameborn;
+    // Beltzer.gender = Male;
+    // displayCharacter(&Beltzer);
+    // Character Ma;
+    // Ma.level = 1;
+    // strcpy(Ma.name, "Ma");
+    // Ma.race = Tideborn;
+    // Ma.gender = Female;
+    // displayCharacter(&Ma);
+    // Character Hom;
+    // Hom.level = 20;
+    // strcpy(Hom.name, "Hom");
+    // Hom.race = Isquaian;
+    // Hom.gender = Male;
+    // displayCharacter(&Hom);
 
-    /*Race race;
     printf("Welcome to Isquaia!\n");
-    chooseName();
-    chooseGender();
-    chooseRace();
-    Character character = constructCharacter(name, 12, gender);
-    displayCharacter(character);
-    startMapMovement(character);*/
+    printf("What would you like to do?\n");
+    const char* options[] = {"1) Go to the Sirens headquarters\n", "2) Go to the Rocks\n", "3) Go to Hightowers\n", "4) Go to the dungeon\n"};
+    int numOptions = sizeof(options) / sizeof(options[0]);
+    for(int i = 0; i < numOptions; i++){
+        printf("%s", options[i]);
+    }
+    char choice;
+    fgets(choice, sizeof(choice), stdin);
+    puts(choice);
+    return 0;
+    
+    if(choice == "1"){
+        // Go to Siren's headquarters
+    }
+    else if(choice == "2"){
+        // Go to the Rocks
+    }
+    else if(choice == "3"){
+        // Go to Hightowers
+    }
+    else if(choice == "4"){
+        // Go to the dungeon
+    }
 }
