@@ -103,20 +103,19 @@ int main()
         printf("%s", options[i]);
     }
     char choice;
-    fgets(choice, sizeof(choice), stdin);
-    puts(choice);
-    return 0;
+    scanf(" %c", &choice);
     
-    if(choice == "1"){
-        // Go to Siren's headquarters
+    if(choice == '1'){
+        printf("Going to Siren's headquarters.\n");
     }
-    else if(choice == "2"){
-        // Go to the Rocks
+    else if(choice == '2'){
+        printf("Going to the Rocks.\n");
     }
-    else if(choice == "3"){
-        // Go to Hightowers
+    else if(choice == '3'){
+        printf("Goint to the Hightowers District.\n");
     }
-    else if(choice == "4"){
-        // Go to the dungeon
+    else if(choice == '4'){
+        printf("Going to Lowtown.\n");
     }
+    return 0;
 }
